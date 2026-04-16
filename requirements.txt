@@ -1,0 +1,12 @@
+requests==2.33.0
+snowflake-connector-python==4.4.0
+python-dotenv==1.2.2
+PyYAML==6.0.1
+packaging==26.0
+pandas==3.0.1
+typing_extensions==4.15.0
+urllib3==2.6.3
+boto3==1.42.78
+botocore==1.42.78
+pyarrow==23.0.1
+pycparser==3.0

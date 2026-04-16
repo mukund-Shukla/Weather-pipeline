@@ -1,0 +1,49 @@
+cities:
+  - name: lucknow
+    latitude: 26.85
+    longitude: 80.95
+    timezone: Asia/Kolkata
+
+  - name: bangalore
+    latitude: 12.97
+    longitude: 77.59
+    timezone: Asia/Kolkata
+
+  - name: delhi
+    latitude: 28.61
+    longitude: 77.21
+    timezone: Asia/Kolkata
+
+  - name: mumbai
+    latitude: 19.07
+    longitude: 72.87
+    timezone: Asia/Kolkata
+
+api:
+  base_url: https://api.open-meteo.com/v1/forecast
+  past_days: 7
+  retry_attempts: 3
+  retry_backoff_seconds: 2
+  hourly_variables:
+    - temperature_2m
+    - apparent_temperature
+    - relative_humidity_2m
+    - precipitation
+    - windspeed_10m
+    - weathercode
+
+snowflake:
+  warehouse: COMPUTE_WH
+  database: weather_db
+  schema_raw: RAW_LAYER
+  schema_staging: STAGING_LAYER
+  schema_warehouse: WAREHOUSE_LAYER
+
+pipeline:
+  watermark_file: watermark/last_run.json
+  local_raw_dir: data/raw
+  local_staging_dir: data/staging
+  local_processed_dir: data/processed
+  log_file: logs/pipeline.log
+  dim_date_start: "2023-01-01"
+  dim_date_end: "2030-12-31"
