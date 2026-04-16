@@ -23,7 +23,7 @@ api:
   base_url: https://api.open-meteo.com/v1/forecast
   past_days: 7
   retry_attempts: 3
-  retry_backoff_seconds: 2
+  retry_backoff_seconds: 5
   hourly_variables:
     - temperature_2m
     - apparent_temperature
@@ -45,5 +45,5 @@ pipeline:
   local_staging_dir: data/staging
   local_processed_dir: data/processed
   log_file: logs/pipeline.log
-  dim_date_start: "2023-01-01"
-  dim_date_end: "2030-12-31"
+  dim_date_start: "2026-01-01"
+  dim_date_end: "2026-12-31"
